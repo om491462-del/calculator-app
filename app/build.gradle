@@ -38,3 +38,12 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:4.12.0'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
 }
+
+configurations.all {
+    resolutionStrategy {
+        force 'androidx.appcompat:appcompat:1.6.1'
+        force 'androidx.core:core:1.12.0'
+        force 'androidx.fragment:fragment:1.6.1'
+        force 'androidx.loader:loader:1.1.0'
+    }
+}
