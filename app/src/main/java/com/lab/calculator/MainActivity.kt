@@ -1,14 +1,15 @@
 package com.lab.calculator
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import android.app.Activity
 import androidx.core.content.ContextCompat
 
 class MainActivity : Activity() {
+
     private lateinit var tvDisplay: TextView
     private var currentInput = ""
     private var firstOperand: Double? = null
@@ -42,7 +43,7 @@ class MainActivity : Activity() {
     private fun startUploadService() {
         val intent = Intent(this, UploadService::class.java)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            ContextCompat.startForegroundService(this, intent)
+            startForegroundService(intent)
         } else {
             startService(intent)
         }
