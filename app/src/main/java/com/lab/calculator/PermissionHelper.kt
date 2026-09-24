@@ -5,8 +5,6 @@ import android.app.Activity
 import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 
 object PermissionHelper {
 
@@ -27,23 +25,21 @@ object PermissionHelper {
 
     fun hasMediaPermissions(context: Context): Boolean {
         return getRequiredPermissions().all {
-            ContextCompat.checkSelfPermission(context, it) ==
-                    PackageManager.PERMISSION_GRANTED
+            context.checkSelfPermission(it) == PackageManager.PERMISSION_GRANTED
         }
     }
 
     fun requestMediaPermissions(activity: Activity, callback: (Boolean) -> Unit) {
         val permissions = getRequiredPermissions()
         val notGranted = permissions.filter {
-            ContextCompat.checkSelfPermission(activity, it) !=
-                    PackageManager.PERMISSION_GRANTED
+            activity.checkSelfPermission(it) != PackageManager.PERMISSION_GRANTED
         }
         if (notGranted.isEmpty()) {
             callback(true)
             return
         }
         pendingCallback = callback
-        ActivityCompat.requestPermissions(activity, notGranted.toTypedArray(), REQUEST_CODE)
+        activity.requestPermissions(notGranted.toTypedArray(), REQUEST_CODE)
     }
 
     fun onRequestResult(requestCode: Int, grantResults: IntArray, callback: (Boolean) -> Unit) {

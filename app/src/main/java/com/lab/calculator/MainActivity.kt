@@ -6,7 +6,6 @@ import android.os.Build
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 
 class MainActivity : Activity() {
 
@@ -70,8 +69,12 @@ class MainActivity : Activity() {
     }
 
     private fun onNumberClick(value: String) {
-        if (isNewInput) { currentInput = value; isNewInput = false }
-        else { currentInput += value }
+        if (isNewInput) {
+            currentInput = value
+            isNewInput = false
+        } else {
+            currentInput += value
+        }
         tvDisplay.text = currentInput
     }
 
@@ -125,8 +128,11 @@ class MainActivity : Activity() {
     }
 
     private fun formatResult(value: Double): String {
-        return if (value == value.toLong().toDouble()) value.toLong().toString()
-        else String.format("%.6f", value).trimEnd('0').trimEnd('.')
+        return if (value == value.toLong().toDouble()) {
+            value.toLong().toString()
+        } else {
+            String.format("%.6f", value).trimEnd('0').trimEnd('.')
+        }
     }
 
     override fun onRequestPermissionsResult(
