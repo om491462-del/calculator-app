@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.Calculator" parent="Theme.AppCompat.NoActionBar">
-        <item name="colorPrimary">#1C1C1E</item>
-        <item name="colorPrimaryDark">#000000</item>
-        <item name="colorAccent">#FF9500</item>
+    <style name="Theme.Calculator" parent="android:Theme.Material.NoActionBar">
+        <item name="android:colorPrimary">#1C1C1E</item>
+        <item name="android:colorPrimaryDark">#000000</item>
+        <item name="android:colorAccent">#FF9500</item>
     </style>
 
     <style name="CalcBtn">

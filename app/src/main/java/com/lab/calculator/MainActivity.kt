@@ -5,11 +5,10 @@ import android.os.Build
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
+import android.app.Activity
 import androidx.core.content.ContextCompat
 
-class MainActivity : AppCompatActivity() {
-
+class MainActivity : Activity() {
     private lateinit var tvDisplay: TextView
     private var currentInput = ""
     private var firstOperand: Double? = null
