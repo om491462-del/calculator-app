@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1C1C1E"
+    android:padding="16dp">
+
+    <!-- شاشة العرض -->
+    <TextView
+        android:id="@+id/tvDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="end|bottom"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="72sp"
+        android:padding="16dp"
+        android:maxLines="1"/>
+
+    <!-- الصف 1 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/btnAC" style="@style/CalcBtnGray" android:text="AC"/>
+        <Button android:id="@+id/btnDel" style="@style/CalcBtnGray" android:text="⌫"/>
+        <Button android:id="@+id/btnPercent" style="@style/CalcBtnGray" android:text="%"/>
+        <Button android:id="@+id/btnDivide" style="@style/CalcBtnOrange" android:text="÷"/>
+    </LinearLayout>
+
+    <!-- الصف 2 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/btn7" style="@style/CalcBtn" android:text="7"/>
+        <Button android:id="@+id/btn8" style="@style/CalcBtn" android:text="8"/>
+        <Button android:id="@+id/btn9" style="@style/CalcBtn" android:text="9"/>
+        <Button android:id="@+id/btnMultiply" style="@style/CalcBtnOrange" android:text="×"/>
+    </LinearLayout>
+
+    <!-- الصف 3 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/btn4" style="@style/CalcBtn" android:text="4"/>
+        <Button android:id="@+id/btn5" style="@style/CalcBtn" android:text="5"/>
+        <Button android:id="@+id/btn6" style="@style/CalcBtn" android:text="6"/>
+        <Button android:id="@+id/btnMinus" style="@style/CalcBtnOrange" android:text="−"/>
+    </LinearLayout>
+
+    <!-- الصف 4 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/btn1" style="@style/CalcBtn" android:text="1"/>
+        <Button android:id="@+id/btn2" style="@style/CalcBtn" android:text="2"/>
+        <Button android:id="@+id/btn3" style="@style/CalcBtn" android:text="3"/>
+        <Button android:id="@+id/btnPlus" style="@style/CalcBtnOrange" android:text="+"/>
+    </LinearLayout>
+
+    <!-- الصف 5 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/btn0" style="@style/CalcBtn" android:text="0"/>
+        <Button android:id="@+id/btnDot" style="@style/CalcBtn" android:text="."/>
+        <Button android:id="@+id/btnEquals" style="@style/CalcBtnOrange" android:text="="/>
+    </LinearLayout>
+
+</LinearLayout>
