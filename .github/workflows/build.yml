@@ -19,17 +19,11 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       
-      - name: Install Gradle 8.1
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y wget unzip
-          wget https://services.gradle.org/distributions/gradle-8.1-bin.zip -O /tmp/gradle.zip
-          sudo unzip -d /opt /tmp/gradle.zip
-          sudo ln -s /opt/gradle-8.1/bin/gradle /usr/local/bin/gradle
-          gradle --version
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
       
-      - name: Build APK
-        run: gradle assembleDebug
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug
       
       - name: Upload APK
         uses: actions/upload-artifact@v4
